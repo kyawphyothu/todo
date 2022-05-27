@@ -8,13 +8,9 @@ if ($_POST) {
     $id = $_POST['id'];
     // print_r($_POST);
 
-    $sql = "UPDATE todo SET title = ':title', description = ':description' WHERE id = ':id'";
+    $sql = "UPDATE todo SET title = '$title', description = '$description' WHERE id = '$id'";
     $statement = $db->prepare($sql);
-    $statement->execute([
-        ':title' => $title,
-        ':description' => $description,
-        ':id' => $id,
-    ]);
+    $statement->execute();
 
     header("location: index.php");
 } else {

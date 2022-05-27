@@ -11,6 +11,7 @@ if ($_POST) {
         ":title" => $title,
         ":description" => $description,
     ]);
+    header("location: index.php");
 }
 
 

@@ -26,6 +26,9 @@ $i = 1;
 <body>
     <div class="card">
         <div class="card-body">
+            <?php if (isset($_GET['successDel'])) : ?>
+                <div class="alert alert-warning">Deleated Todo</div>
+            <?php endif ?>
             <h2>Todo Home Page</h2>
             <div>
                 <a class="btn btn-primary" href="add.php">Create New</a>
@@ -49,7 +52,7 @@ $i = 1;
                             <td><?php echo date("d,M,Y", strtotime($values->created_at)) ?></td>
                             <td>
                                 <a type="button" class="btn btn-warning" href="edit.php?id=<?php echo $values->id ?>">Edit</a>
-                                <a type="button" class="btn btn-danger" href="#">Delete</a>
+                                <a type="button" class="btn btn-danger" href="delete.php?id=<?php echo $values->id ?>">Delete</a>
                             </td>
                         </tr>
                         <?php $i++ ?>
